@@ -21,13 +21,22 @@ python evaluate.py --data_path "test_data/*.png" --load_path "model.pt"
 ```
 Check `evaluate.py` to see the full list of arguments. Using `--data_path` argument to point to the set of images via a glob pattern. Using `--load_path`, you can provide the path to the model that you want to evaluate.
 
-### Outputs
 The evaluation code produces prints the Disentanglement, Completeness and the Informativeness (DCI) scores.
+
+### Clusters
+To visualize K-Means clusters of the blocks learned by the model, simply execute:
+```bash
+python cluster.py --data_path "test_data/*.png" --load_path "model.pt"
+```
+Check `cluster.py` to see the full list of arguments. Using `--data_path` argument to point to the set of images via a glob pattern. Using `--load_path`, you can provide the path to the model that you want to run clustering with.
+
+The code produces a PNG file `clusters.png` which visualizes the clusters for all blocks.
 
 ### Packages Required
 The following packages may need to be installed first.
 - [PyTorch](https://pytorch.org/)
 - [TensorBoard](https://pypi.org/project/tensorboard/) for logging.
+- [KMeans-PyTorch](https://pypi.org/project/kmeans-pytorch/).
 
 ### Citation
 ```
